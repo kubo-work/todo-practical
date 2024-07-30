@@ -7,4 +7,3 @@ export type TodosType = {
     updateDate: string;
     status: keyof TodosStatusType;
 }
-

@@ -2,8 +2,7 @@ import { Flex, Td, Tr } from "@chakra-ui/react";
 import React, { FC, useCallback } from "react";
 import { TodosType } from "../types/TodosType";
 import { useTodos } from "../hooks/useTodos";
-import { BlueButton } from "./button/BlueButton";
-import { RedButton } from "./button/RedButton";
+import PrimaryButton from "./PrimaryButton";
 
 type Props = {
   todo: TodosType;
@@ -48,10 +47,15 @@ const TableRow: FC<Props> = React.memo((props) => {
       <Td textAlign="center">{todo.updateDate}</Td>
       <Td>
         <Flex gap={2} justify="center">
-          <BlueButton onClick={() => onClick(todo.id)}>編集</BlueButton>
-          <RedButton onClick={() => onClickRemoveAction(todo.id)}>
+          <PrimaryButton bg="blue.400" onClick={() => onClick(todo.id)}>
+            編集
+          </PrimaryButton>
+          <PrimaryButton
+            bg="red.400"
+            onClick={() => onClickRemoveAction(todo.id)}
+          >
             削除
-          </RedButton>
+          </PrimaryButton>
         </Flex>
       </Td>
     </Tr>

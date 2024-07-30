@@ -14,8 +14,7 @@ import {
 import React, { ChangeEvent, FC, useEffect, useState } from "react";
 import { TodosType } from "../types/TodosType";
 import { useTodos } from "../hooks/useTodos";
-import { BlueButton } from "./button/BlueButton";
-import { RedButton } from "./button/RedButton";
+import PrimaryButton from "./PrimaryButton";
 
 type Props = {
   editTodo: TodosType;
@@ -110,8 +109,12 @@ const TodoDetailModal: FC<Props> = React.memo((props) => {
         </ModalBody>
         <ModalFooter>
           <Flex gap={2}>
-            <BlueButton onClick={onUpdate}>更新</BlueButton>
-            <RedButton onClick={onCancel}>キャンセル</RedButton>
+            <PrimaryButton bg="blue.400" onClick={onUpdate}>
+              更新
+            </PrimaryButton>
+            <PrimaryButton bg="red.400" onClick={onCancel}>
+              キャンセル
+            </PrimaryButton>
           </Flex>
         </ModalFooter>
       </ModalContent>
